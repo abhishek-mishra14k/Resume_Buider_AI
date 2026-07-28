@@ -1,63 +1,117 @@
-# 🚀 Resume_Buider_AI
+<div align="center">
 
-An AI-powered Resume Builder built using the MERN Stack that helps users create professional resumes, analyze ATS compatibility, generate AI-based improvements, create cover letters, and prepare for interviews.
+# 🚀 Resume Builder AI
+
+### AI-Powered Resume Builder & Career Assistant using MERN Stack + Google Gemini AI
+
+Create ATS-friendly resumes, analyze resume quality, generate cover letters, improve resumes with AI, prepare for interviews, and match resumes with job descriptions.
+
+<img src="https://img.shields.io/badge/React-19-blue?logo=react" />
+<img src="https://img.shields.io/badge/Node.js-Express-green?logo=node.js" />
+<img src="https://img.shields.io/badge/MongoDB-Database-darkgreen?logo=mongodb" />
+<img src="https://img.shields.io/badge/TailwindCSS-v4-38B2AC?logo=tailwind-css" />
+<img src="https://img.shields.io/badge/Google-Gemini_AI-blue?logo=google" />
+<img src="https://img.shields.io/badge/License-MIT-yellow" />
+
+</div>
 
 ---
 
-## 📌 Features
+# 📖 Overview
 
-### 🔐 Authentication
-- User Registration & Login
+Resume Builder AI is a full-stack MERN application designed to help students and professionals build high-quality, ATS-friendly resumes with the power of Artificial Intelligence.
+
+The application combines resume creation, AI-powered resume analysis, cover letter generation, interview preparation, and job matching into one modern platform.
+
+---
+
+# ✨ Features
+
+## 👤 User Authentication
+
+- Secure Registration & Login
 - JWT Authentication
 - Protected Routes
-- User Profile Management
-
-### 📄 Resume Builder
-- Multi-Step Resume Form
-- Live Resume Preview
-- Save & Update Resume
-- Download Resume as PDF
-- Responsive Resume Templates
-
-### 🤖 AI Features
-- AI Resume Improvement
-- ATS Resume Analyzer
-- AI Cover Letter Generator
-- AI Interview Question Generator
-- AI Job Match Suggestions
-
-### 📊 Dashboard
-- Resume Overview
-- Career Tools
-- Quick Actions
-- Resume Management
-
-### 🎨 Templates
-- Professional Template
-- Modern Template
-- Minimal Template
-- Creative Template
-- ATS Friendly Template
-
-### 📱 Responsive Design
-- Mobile Friendly
-- Tablet Friendly
-- Desktop Optimized
+- User Profile
 
 ---
 
-# 🛠️ Tech Stack
+## 📄 Resume Builder
+
+- Multi-step Resume Form
+- Live Resume Preview
+- Edit Existing Resume
+- Save Resume
+- Download Resume as PDF
+- Professional Resume Templates
+
+---
+
+## 🤖 AI Career Tools
+
+### ATS Resume Analyzer
+
+- Resume Score
+- Keyword Analysis
+- Section-wise Analysis
+- Improvement Suggestions
+
+### AI Resume Improver
+
+- Improve Resume Content
+- Better Professional Wording
+- Skill Enhancement Suggestions
+
+### AI Cover Letter Generator
+
+- Personalized Cover Letters
+- Job Specific Cover Letters
+- Professional Formatting
+
+### AI Interview Questions
+
+- HR Questions
+- Technical Questions
+- Personalized Interview Preparation
+
+### Job Matcher
+
+- Resume vs Job Description Matching
+- Match Percentage
+- Missing Skills Detection
+- Improvement Suggestions
+
+---
+
+# 🎯 Key Highlights
+
+- AI Powered Resume Analysis
+- ATS Friendly Resume Templates
+- Google Gemini AI Integration
+- JWT Authentication
+- Responsive Design
+- RESTful APIs
+- Modern UI
+- PDF Resume Download
+
+---
+
+# 🛠 Tech Stack
 
 ## Frontend
+
 - React.js
 - Vite
 - Tailwind CSS
-- React Router DOM
+- React Router
 - Axios
-- React Icons
 - React Hot Toast
+- React Icons
+
+---
 
 ## Backend
+
 - Node.js
 - Express.js
 - MongoDB
@@ -65,37 +119,40 @@ An AI-powered Resume Builder built using the MERN Stack that helps users create 
 - JWT Authentication
 - Multer
 
-## AI Integration
+---
+
+## AI
+
 - Google Gemini API
 
 ---
 
-# 📂 Project Structure
+# 📂 Folder Structure
 
-```
-Resume_Buider_AI
+```text
+Resume_Builder_AI/
 │
-├── client
-│   ├── public
-│   ├── src
-│   │   ├── assets
-│   │   ├── components
-│   │   ├── context
-│   │   ├── hooks
-│   │   ├── pages
-│   │   ├── services
-│   │   └── utils
-│   └── package.json
+├── client/
+│   ├── public/
+│   ├── src/
+│   │
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── pages/
+│   ├── services/
+│   ├── utils/
+│   └── main.jsx
 │
-├── server
-│   ├── config
-│   ├── controllers
-│   ├── middleware
-│   ├── models
-│   ├── routes
-│   ├── services
-│   ├── server.js
-│   └── package.json
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   └── server.js
 │
 ├── package.json
 └── README.md
@@ -103,7 +160,7 @@ Resume_Buider_AI
 
 ---
 
-# ⚙️ Installation
+# ⚙ Installation
 
 ## Clone Repository
 
@@ -111,13 +168,13 @@ Resume_Buider_AI
 git clone https://github.com/abhishek-mishra14k/Resume_Buider_AI.git
 ```
 
+Move inside the project
+
 ```bash
 cd Resume_Buider_AI
 ```
 
----
-
-## Install Dependencies
+Install dependencies
 
 ### Root
 
@@ -143,30 +200,30 @@ npm install
 
 # 🔑 Environment Variables
 
-Create a `.env` file inside the `server` folder.
+Create a `.env` file inside the **server** directory.
 
 ```env
 PORT=5000
 
 MONGO_URI=your_mongodb_connection_string
 
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_secret_key
 
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
 ---
 
-# ▶️ Run the Project
+# ▶ Running the Application
 
-### Start Backend
+Backend
 
 ```bash
 cd server
 npm run dev
 ```
 
-### Start Frontend
+Frontend
 
 ```bash
 cd client
@@ -177,92 +234,99 @@ npm run dev
 
 # 📸 Screenshots
 
-> Add screenshots of:
+| Home | Dashboard |
+|------|-----------|
+| Add Screenshot | Add Screenshot |
 
-- Home Page
-- Dashboard
-- Resume Builder
-- Resume Preview
-- ATS Analyzer
-- Cover Letter Generator
-- Interview Questions
-- Job Matcher
-- Resume Templates
+| Resume Builder | ATS Analyzer |
+|----------------|--------------|
+| Add Screenshot | Add Screenshot |
+
+| Cover Letter | Job Matcher |
+|---------------|-------------|
+| Add Screenshot | Add Screenshot |
+
+| Interview Questions | Templates |
+|---------------------|-----------|
+| Add Screenshot | Add Screenshot |
 
 ---
 
-# 🌟 Future Improvements
+# 🚀 Future Enhancements
 
+- LinkedIn Resume Import
+- Multiple Resume Versions
 - Resume Sharing
 - AI Resume Scoring
-- Dark Mode
-- Multiple Resume Versions
-- LinkedIn Import
 - Portfolio Generator
+- Dark Mode
 - Resume Analytics
 - Multi-language Support
+- Team Collaboration
 
 ---
 
-# 📚 Learning Outcomes
+# 📚 What I Learned
 
 - MERN Stack Development
+- Authentication using JWT
 - REST API Development
-- JWT Authentication
 - MongoDB Database Design
-- AI Integration using Gemini API
-- Responsive UI Design
-- State Management
-- File Handling
-- Resume Generation
-- ATS Resume Analysis
+- React Context API
+- Tailwind CSS
+- Google Gemini AI Integration
+- PDF Generation
+- Resume Analysis Algorithms
+- AI Prompt Engineering
 
 ---
 
 # 🤝 Contributing
 
-Contributions are welcome.
-
-1. Fork the repository
-
-2. Create your feature branch
+Contributions are always welcome.
 
 ```bash
+Fork the repository
+
+Create a new branch
+
 git checkout -b feature-name
-```
 
-3. Commit your changes
+Commit your changes
 
-```bash
-git commit -m "Added new feature"
-```
+git commit -m "Added feature"
 
-4. Push to the branch
+Push
 
-```bash
 git push origin feature-name
-```
 
-5. Open a Pull Request
+Open a Pull Request
+```
 
 ---
 
 # 👨‍💻 Author
 
-**Abhishek Mishra**
+## Abhishek Mishra
 
-GitHub:
+B.Tech CSE (IoT & Blockchain)
+
+GitHub
+
 https://github.com/abhishek-mishra14k
 
-LinkedIn:
-(Add your LinkedIn Profile)
+---
+
+# ⭐ Show Your Support
+
+If you like this project, please give it a ⭐ on GitHub.
+
+It motivates me to build more open-source projects.
 
 ---
 
-# ⭐ Support
+<div align="center">
 
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+### Built with ❤️ using MERN Stack & Google Gemini AI
 
----
-
-## Made with ❤️ using React, Node.js, Express, MongoDB & Google Gemini AI.
+</div>
