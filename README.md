@@ -25,6 +25,12 @@ The application combines resume creation, AI-powered resume analysis, cover lett
 
 ---
 
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Project-success?style=for-the-badge)](https://resumeexpert-kappa.vercel.app/)
+
+</div>
+
 # ✨ Features
 
 ## 👤 User Authentication
@@ -311,9 +317,9 @@ Open a Pull Request
 
 B.Tech CSE (IoT & Blockchain)
 
-GitHub
+🔗 **Live Demo:** https://resumeexpert-kappa.vercel.app/
 
-https://github.com/abhishek-mishra14k
+🐙 **GitHub:** https://github.com/abhishek-mishra14k
 
 ---
 
