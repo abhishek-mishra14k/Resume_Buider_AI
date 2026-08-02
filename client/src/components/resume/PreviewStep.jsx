@@ -1,6 +1,8 @@
 import ResumePreview from "./ResumePreview";
 import api from "../../services/api";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 export default function PreviewStep({
     resumeData,
@@ -8,48 +10,75 @@ export default function PreviewStep({
     downloadPDF,
     prevStep,
 }) {
+    const navigate = useNavigate();
+    const { user } = useAuth();
 
+    // Check if user is logged in
+    const requireLogin = () => {
+        if (!user) {
+            toast.error("Please login to continue");
+            navigate("/login", {
+                state: {
+                    from: "/resume-builder",
+                },
+            });
+            return false;
+        }
+        return true;
+    };
+
+    // Save Resume
     const saveResume = async () => {
+        if (!requireLogin()) return;
+
         try {
             const payload = {
                 ...resumeData,
-                title: resumeData.title || `${resumeData.fullName}'s Resume`,
+                title:
+                    resumeData.title || `${resumeData.fullName}'s Resume`,
                 template: selectedTemplate,
             };
 
-            // If editing an existing resume
+            // Update existing resume
             if (resumeData._id) {
                 await api.put(`/resume/${resumeData._id}`, payload);
             } else {
-                // Creating a new resume
+                // Create new resume
                 const { data } = await api.post("/resume", payload);
 
-                // Store the generated _id so future saves update instead of creating duplicates
+                // Store generated ID
                 resumeData._id = data.resume._id;
             }
 
             toast.success("Resume Saved Successfully!");
 
-            // Automatically download after saving
+            // Download after saving
             if (downloadPDF) {
-                await downloadPDF();
+                downloadPDF();
             }
         } catch (err) {
             console.error(err);
             toast.error("Failed to Save Resume");
         }
     };
+
+    // Download Resume
+    const handleDownload = () => {
+        if (!requireLogin()) return;
+
+        if (downloadPDF) {
+            downloadPDF();
+        }
+    };
+
     return (
         <div className="space-y-6">
-
             <div className="flex items-center justify-between">
-
                 <h2 className="text-3xl font-bold text-slate-800">
                     Resume Preview
                 </h2>
 
                 <div className="flex gap-3">
-
                     <button
                         onClick={prevStep}
                         className="rounded-lg border border-slate-300 px-5 py-2 hover:bg-slate-100"
@@ -66,22 +95,12 @@ export default function PreviewStep({
 
                     <button
                         type="button"
-                        onClick={() => {
-                            alert("Button Clicked");
-                            console.log("downloadPDF prop:", downloadPDF);
-
-                            if (downloadPDF) {
-                                downloadPDF();
-                            }
-                        }}
+                        onClick={handleDownload}
                         className="rounded-lg bg-blue-600 px-5 py-2 text-white hover:bg-blue-700"
                     >
                         Download PDF
                     </button>
-
-
                 </div>
-
             </div>
 
             <ResumePreview
@@ -89,7 +108,6 @@ export default function PreviewStep({
                 selectedTemplate={selectedTemplate}
                 downloadPDF={downloadPDF}
             />
-
         </div>
     );
 }

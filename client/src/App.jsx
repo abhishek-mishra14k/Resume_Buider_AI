@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import ProtectedRoute from "./components/common/protectedRoute";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -29,11 +30,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute>}/>
+        <Route path="/profile" element={ <ProtectedRoute> <Profile /> </ProtectedRoute>}/>
+        <Route path="/resume/:id" element={<ProtectedRoute><ResumeDetails /></ProtectedRoute>}/>
         <Route path="/resume-builder" element={<ResumeBuilder />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/resume/:id" element={<ResumeDetails />} />
         <Route path="/resume-builder/:id" element={<ResumeBuilder />} />
         <Route path="/career-tools/job-matcher" element={<JobMatcher />} />
         <Route path="/career-tools/cover-letter" element={<CoverLetter />} />
